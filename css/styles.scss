@@ -1,39 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-body{
+
+body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
-*{
+
+* {
     box-sizing: border-box;
 }
-.wrapper{
+
+.wrapper {
     display: flex;
     height: 100vh;
     width: 100%;
-    .notes-wrapper{
+
+    .notes-wrapper {
         flex: 30%;
         min-width: 300px;
         height: 100vh;
         border-right: 1px solid rgb(221, 221, 221);
         background: #fbfbfb;
-        .notes{
+
+        .notes {
             width: 100%;
-            .note{
+
+            .note {
                 background: #fbfbfb;
                 height: 70px;
                 border-bottom: 1.2px solid rgb(224, 224, 224);
                 padding: 0 12px 0 30px;
-                .text{
+
+                .text {
                     overflow: hidden;
                     margin-right: 10%;
-                    h2{
+
+                    h2 {
                         margin-bottom: 0;
                         font-size: 1.3rem;
                         margin-top: 10px;
                         color: #202020;
                         width: 100%;
+                        white-space: nowrap;
                     }
-                    p{
+
+                    p {
                         margin-top: 10px;
                         font-size: 14px;
                         color: #454545;
@@ -41,41 +51,76 @@ body{
                         white-space: nowrap;
                         font-weight: 400;
                     }
-                }   
-                &:hover{
+                }
+
+                &:hover {
                     background: #e6e6e6;
                 }
-                &.active{
+
+                &.active {
                     background: #e6e6e6;
                 }
             }
         }
     }
-    .current-wrapper{
+
+    .current-wrapper {
         flex: 70%;
         min-width: 300px;
         height: 100vh;
     }
 }
-.note{
+
+.note {
     display: flex;
-    .text{
+
+    .text {
         flex: calc(100% - 70px);
     }
-    .aux{
+
+    .aux {
         flex: 70px;
         position: relative;
-        .img{
+
+        .img {
             width: 60px;
             height: 60px;
             overflow: hidden;
             margin-top: 6px;
             border-radius: 10px;
-            img{
+
+            img {
                 width: 100%;
                 min-height: 100%;
                 object-fit: cover;
             }
         }
     }
+}
+
+.header {
+    align-items: flex-end;
+    justify-content: flex-end;
+    display: flex;
+    width: 100%;
+    padding-top: 10px;
+
+    i {
+        margin-right: 18px;
+        font-size: 25px;
+    }
+}
+
+#current-title {
+    padding: 0 30px;
+    width: calc(100% - 60px);
+    margin: 20px 0;
+    color: #202020;
+}
+
+#current-note {
+    padding: 0 30px;
+    width: calc(100% - 60px);
+    margin: 0;
+    color: #2c2c2c;
 }

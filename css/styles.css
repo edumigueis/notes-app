@@ -49,6 +49,7 @@ body {
   margin-top: 10px;
   color: #202020;
   width: 100%;
+  white-space: nowrap;
 }
 
 .wrapper .notes-wrapper .notes .note .text p {
@@ -108,5 +109,38 @@ body {
   min-height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.header {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.header i {
+  margin-right: 18px;
+  font-size: 25px;
+}
+
+#current-title {
+  padding: 0 30px;
+  width: calc(100% - 60px);
+  margin: 20px 0;
+  color: #202020;
+}
+
+#current-note {
+  padding: 0 30px;
+  width: calc(100% - 60px);
+  margin: 0;
+  color: #2c2c2c;
 }
 /*# sourceMappingURL=styles.css.map */
