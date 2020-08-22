@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.wrapper .notes-wrapper {
+  -webkit-box-flex: 30%;
+      -ms-flex: 30%;
+          flex: 30%;
+  min-width: 300px;
+  height: 100vh;
+  border-right: 1px solid #dddddd;
+  background: #fbfbfb;
+}
+
+.wrapper .notes-wrapper .notes {
+  width: 100%;
+}
+
+.wrapper .notes-wrapper .notes .note {
+  background: #fbfbfb;
+  height: 70px;
+  border-bottom: 1.2px solid #e0e0e0;
+  padding: 0 12px 0 30px;
+}
+
+.wrapper .notes-wrapper .notes .note .text {
+  overflow: hidden;
+  margin-right: 10%;
+}
+
+.wrapper .notes-wrapper .notes .note .text h2 {
+  margin-bottom: 0;
+  font-size: 1.3rem;
+  margin-top: 10px;
+  color: #202020;
+  width: 100%;
+}
+
+.wrapper .notes-wrapper .notes .note .text p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #454545;
+  width: 100%;
+  white-space: nowrap;
+  font-weight: 400;
+}
+
+.wrapper .notes-wrapper .notes .note:hover {
+  background: #e6e6e6;
+}
+
+.wrapper .notes-wrapper .notes .note.active {
+  background: #e6e6e6;
+}
+
+.wrapper .current-wrapper {
+  -webkit-box-flex: 70%;
+      -ms-flex: 70%;
+          flex: 70%;
+  min-width: 300px;
+  height: 100vh;
+}
+
+.note {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.note .text {
+  -webkit-box-flex: calc(100% - 70px);
+      -ms-flex: calc(100% - 70px);
+          flex: calc(100% - 70px);
+}
+
+.note .aux {
+  -webkit-box-flex: 70px;
+      -ms-flex: 70px;
+          flex: 70px;
+  position: relative;
+}
+
+.note .aux .img {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  margin-top: 6px;
+  border-radius: 10px;
+}
+
+.note .aux .img img {
+  width: 100%;
+  min-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+*{
+    box-sizing: border-box;
+}
+.wrapper{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    .notes-wrapper{
+        flex: 30%;
+        min-width: 300px;
+        height: 100vh;
+        border-right: 1px solid rgb(221, 221, 221);
+        background: #fbfbfb;
+        .notes{
+            width: 100%;
+            .note{
+                background: #fbfbfb;
+                height: 70px;
+                border-bottom: 1.2px solid rgb(224, 224, 224);
+                padding: 0 12px 0 30px;
+                .text{
+                    overflow: hidden;
+                    margin-right: 10%;
+                    h2{
+                        margin-bottom: 0;
+                        font-size: 1.3rem;
+                        margin-top: 10px;
+                        color: #202020;
+                        width: 100%;
+                    }
+                    p{
+                        margin-top: 10px;
+                        font-size: 14px;
+                        color: #454545;
+                        width: 100%;
+                        white-space: nowrap;
+                        font-weight: 400;
+                    }
+                }   
+                &:hover{
+                    background: #e6e6e6;
+                }
+                &.active{
+                    background: #e6e6e6;
+                }
+            }
+        }
+    }
+    .current-wrapper{
+        flex: 70%;
+        min-width: 300px;
+        height: 100vh;
+    }
+}
+.note{
+    display: flex;
+    .text{
+        flex: calc(100% - 70px);
+    }
+    .aux{
+        flex: 70px;
+        position: relative;
+        .img{
+            width: 60px;
+            height: 60px;
+            overflow: hidden;
+            margin-top: 6px;
+            border-radius: 10px;
+            img{
+                width: 100%;
+                min-height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
