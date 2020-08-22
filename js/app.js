@@ -10,17 +10,30 @@ let notes = [
     text: "Eggs, lemonade, tomatos, soda, bread, milk, cheese",
     images: [],
   },
+  {
+    title: "Tomorrow's Brunch",
+    text: "Call Diego and tell him about the brunch.",
+    images: ["./images/2.jpg"],
+  },
+  {
+    title: "Project Ideas",
+    text: "A cool fashion website, inspired by vogue.",
+    images: [],
+  },
 ];
 let allNotes = document.getElementsByClassName("note");
 let currentNote;
 
-for (let note of allNotes) {
-  note.addEventListener("click", function (event) {
-    openNote(event);
-  });
+function addEventsToPreviews(){
+    for (let note of allNotes) {
+        note.addEventListener("click", function (event) {
+          openNote(event);
+        });
+      }
 }
-
+addEventsToPreviews();
 function openNote(ev) {
+    alert();
   removeAllActive();
   ev.target.classList.add("active");
   currentNote = notes[ev.target.dataset.note];
@@ -87,11 +100,27 @@ function removeAllActive() {
   }
 }
 
-document.getElementById("add-note").addEventListener("click", function(){
-    notes.push({title:"New Anotation", text:"Add text here.", images:[]});
-    updateNotePreviewers();
-})
+document.getElementById("add-note").addEventListener("click", function () {
+  notes.push({ title: "New Anotation", text: "Add text here.", images: [] });
+  updateNotePreviewers();
+});
 
-function updateNotePreviewers(){
-    document.getElementById("notes-preview");
+function updateNotePreviewers() {
+  let el = document.getElementById("notes-preview");
+  elChild = document.createElement('div');
+  elChild.classList.add("note")
+  elChild.dataset.note = ""+notes.length - 1;
+  el.appendChild(elChild);
+  let content;
+  allNotes = document.getElementsByClassName("note")
+  console.log(allNotes);
+  for (var i = 0; i < notes.length; i++) {
+      if(notes[i].images[0] == undefined){
+        content = '<div class="text"><h2>'+notes[i].title+'</h2><p>'+notes[i].text.substring(0, 200).replace(/<img[^>]*>/g,"")+'</p></div><div class="aux" data-note="4"><div class="img"></div></div>'
+      } else{
+        content = '<div class="text"><h2>'+notes[i].title+'</h2><p>'+notes[i].text.substring(0, 200).replace(/<img[^>]*>/g,"")+'</p></div><div class="aux" data-note="4"><div class="img"><img src="'+notes[i].images[0]+'" alt="" /></div></div>'
+      }
+    allNotes[i].innerHTML = content;
+  }
+  addEventsToPreviews();
 }
