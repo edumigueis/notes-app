@@ -1,74 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="./css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
-</head>
-
-<body>
-  <div class="wrapper">
-    <div class="notes-wrapper">
-      <div class="notes" id="notes-preview">
-        <div class="note active" data-note="0">
-          <div class="text">
-            <h2>Carol's Party</h2>
-            <p>Bring her a gift and buy soda.</p>
+  <body>
+    <div class="wrapper">
+      <div class="notes-wrapper">
+        <div class="notes" id="notes-preview">
+          <div class="note active" data-note="0">
+            <div class="text">
+              <h2>Carol's Party</h2>
+              <p>Bring her a gift and buy soda.</p>
+            </div>
+            <div class="aux">
+              <div class="img"><img src="./images/1.jpg" alt="" /></div>
+            </div>
           </div>
-          <div class="aux">
-            <div class="img"><img src="./images/1.jpg" alt="" /></div>
+          <div class="note" data-note="1">
+            <div class="text">
+              <h2>Shopping List</h2>
+              <p>Eggs, lemonade, tomatos, soda, bread, milk, cheese</p>
+            </div>
+            <div class="aux">
+              <div class="img"></div>
+            </div>
           </div>
-        </div>
-        <div class="note" data-note="1">
-          <div class="text">
-            <h2>Shopping List</h2>
-            <p>Eggs, lemonade, tomatos, soda, bread, milk, cheese</p>
+          <div class="note" data-note="2">
+            <div class="text">
+              <h2>Tomorrow's Brunch</h2>
+              <p>Call Diego and tell him about the brunch.</p>
+            </div>
+            <div class="aux" data-note="4">
+              <div class="img"><img src="./images/2.jpg" alt="" /></div>
+            </div>
           </div>
-          <div class="aux">
-            <div class="img"></div>
-          </div>
-        </div>
-        <div class="note" data-note="2">
-          <div class="text">
-            <h2>Tomorrow's Brunch</h2>
-            <p>Call Diego and tell him about the brunch.</p>
-          </div>
-          <div class="aux" data-note="4">
-            <div class="img"><img src="./images/2.jpg" alt="" /></div>
-          </div>
-        </div>
-        <div class="note" data-note="3">
-          <div class="text">
-            <h2>Project Ideas</h2>
-            <p>A cool fashion website, inspired by vogue.</p>
-          </div>
-          <div class="aux">
-            <div class="img"></div>
+          <div class="note" data-note="3">
+            <div class="text">
+              <h2>Project Ideas</h2>
+              <p>A cool fashion website, inspired by vogue.</p>
+            </div>
+            <div class="aux">
+              <div class="img"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="current-wrapper" id="current-wrapper" data-note="0">
-      <div class="header">
-        <i class="far fa-edit" id="edit-note-btn"></i><i class="far fa-save"></i><i class="fas fa-paperclip"></i><i
-          class="far fa-trash-alt"></i>
+      <div class="current-wrapper" id="current-wrapper" data-note="0">
+        <div class="header">
+          <i class="far fa-edit" id="edit-note-btn"></i
+          ><i class="far fa-save"></i><i class="fas fa-paperclip" id="add-image"></i
+          ><i class="far fa-trash-alt"></i>
+        </div>
+        <h1 id="current-title">Carol's Party</h1>
+        <div id="current-note">
+          Bring her a gift and buy soda.
+          <div class="img-wp"><img src="./images/1.jpg" alt="" /></div>
+          I'm thinking of buying a really big gift because i wanna show all my
+          love for her. Maybe a biiggg teddy bear would be perfect:
+          <div class="img-wp"><img src="./images/3.jpg" alt="" /></div>
+        </div>
       </div>
-      <h1 id="current-title">Carol's Party</h1>
-      <div id="current-note">
-        Bring her a gift and buy soda.<div class="img-wp"><img src="./images/1.jpg" alt="" /></div> I'm thinking of
-        buying a really big gift because i wanna show all my love for her. Maybe a biiggg teddy bear would be perfect:
-        <div class="img-wp"><img src="./images/3.jpg" alt="" /></div>
+      <div class="add-btn-wrapper" id="add-note">
+        <button><i class="fas fa-plus"></i></button>
       </div>
     </div>
-    <div class="add-btn-wrapper" id="add-note">
-      <button><i class="fas fa-plus"></i></button>
-    </div>
-  </div>
-  <script src="./js/initializer.js"></script>
-  <script src="./js/app.js"></script>
-</body>
-
+    <script src="./js/initializer.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
 </html>

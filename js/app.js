@@ -23,6 +23,8 @@ let notes = [
 ];
 let allNotes = document.getElementsByClassName("note");
 let currentNote;
+let currentIndex = 0;
+let dataURL;
 
 function addEventsToPreviews() {
   for (let note of allNotes) {
@@ -36,6 +38,7 @@ function openNote(ev) {
   removeAllActive();
   ev.target.classList.add("active");
   currentNote = notes[ev.target.dataset.note];
+  currentIndex = ev.target.dataset.note;
   document.getElementById("current-wrapper").dataset.note =
     "" + ev.target.dataset.note;
   document.getElementById("current-title").innerHTML = currentNote.title;
@@ -66,7 +69,6 @@ function openNote(ev) {
           "<div class='img-wp'><img src=" +
           currentNote.images[i] +
           " /><div>";
-        console.log(res);
       }
     }
     for (var a = 0; a < currentNote.images.length; a++) {
@@ -114,7 +116,6 @@ function updateNotePreviewers() {
   el.appendChild(elChild);
   let content;
   allNotes = document.getElementsByClassName("note");
-  console.log(allNotes);
   for (var i = 0; i < notes.length; i++) {
     if (notes[i].images[0] == undefined) {
       content =
@@ -144,7 +145,7 @@ document
     ev.target.contentEditable = true;
     ev.target.focus();
   });
-  
+
 document
   .getElementById("current-title")
   .addEventListener("focusout", function (ev) {
@@ -152,3 +153,26 @@ document
       "current-title"
     ).innerHTML;
   });
+
+document.getElementById("add-image").addEventListener("click", function(){
+    var inp = document.createElement("input");
+    inp.type = "file";
+    
+    inp.addEventListener("change", function(event){
+        openFile(event);
+    })
+    inp.click();
+
+    
+})
+
+var openFile = function(file) {
+    var input = file.target;
+
+    var reader = new FileReader();
+    reader.onload = function(){
+      dataURL = reader.result;
+      document.getElementById("current-note").innerHTML += '<div class="img-wp"><img src="'+dataURL+'" /></div>'
+    };
+    reader.readAsDataURL(input.files[0]);
+  };
