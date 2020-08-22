@@ -142,7 +142,9 @@ document
   .getElementById("current-title")
   .addEventListener("click", function (ev) {
     ev.target.contentEditable = true;
+    ev.target.focus();
   });
+  
 document
   .getElementById("current-title")
   .addEventListener("focusout", function (ev) {
