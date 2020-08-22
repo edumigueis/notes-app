@@ -28,6 +28,10 @@ function openNote(ev) {
     let res = "";
     let currentString;
     let minusCurrentString;
+
+    /*The weird section of characters is a indexed mark to show that there is a photo there. 
+    This sequence is used because it isn't something a user would normally type. */
+    
     for (var i = 0; i < currentNote.images.length; i++) {
       currentString = "yhyi891gt5a" + i;
       minusCurrentString = "yhyi891gt5a" + (i - 1);
