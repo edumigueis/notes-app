@@ -183,10 +183,40 @@ Not supports in Firefox and IE */
 
 #current-note .img-wp {
   width: 100%;
-  margin: 10px 0;
+  margin: 14px 0;
 }
 
 #current-note .img-wp img {
   max-width: 100%;
+}
+
+.add-btn-wrapper {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+.add-btn-wrapper button {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: #1f1f1f;
+}
+
+.add-btn-wrapper button i {
+  font-size: 2rem;
+  color: #fff;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -154,9 +154,31 @@ Not supports in Firefox and IE */
     outline: none;
     .img-wp{
         width: 100%;
-        margin: 10px 0;
+        margin: 14px 0;
         img{
             max-width: 100%;
+        }
+    }
+}
+
+.add-btn-wrapper{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    button{
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        background: #1f1f1f;
+        i{
+            font-size: 2rem;
+            color: #fff;
         }
     }
 }

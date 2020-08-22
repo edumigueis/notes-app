@@ -3,7 +3,7 @@ let notes = [
     title: "Carol's Party",
     text:
       "Bring her a gift and buy soda. yhyi891gt5a0 I'm thinking of buying a really big gift because i wanna show all my love for her. Maybe a biiggg teddy bear would be perfect: yhyi891gt5a1",
-    images: ["./images/1.jpg", "./images/2.jpg"],
+    images: ["./images/1.jpg", "./images/3.jpg"],
   },
   {
     title: "Shopping List",
@@ -21,6 +21,8 @@ for (let note of allNotes) {
 }
 
 function openNote(ev) {
+  removeAllActive();
+  ev.target.classList.add("active");
   currentNote = notes[ev.target.dataset.note];
   document.getElementById("current-title").innerHTML = currentNote.title;
   document.getElementById("current-note").innerHTML = currentNote.text;
@@ -31,11 +33,10 @@ function openNote(ev) {
 
     /*The weird section of characters is a indexed mark to show that there is a photo there. 
     This sequence is used because it isn't something a user would normally type. */
-    
+
     for (var i = 0; i < currentNote.images.length; i++) {
       currentString = "yhyi891gt5a" + i;
       minusCurrentString = "yhyi891gt5a" + (i - 1);
-      alert(minusCurrentString);
       if (i == 0) {
         res +=
           currentNote.text.slice(0, currentNote.text.indexOf(currentString)) +
@@ -78,4 +79,19 @@ function editNote(ev) {
   } else {
     ev.target.contentEditable = true;
   }
+}
+
+function removeAllActive() {
+  for (let note of allNotes) {
+    note.classList.remove("active");
+  }
+}
+
+document.getElementById("add-note").addEventListener("click", function(){
+    notes.push({title:"New Anotation", text:"Add text here.", images:[]});
+    updateNotePreviewers();
+})
+
+function updateNotePreviewers(){
+    document.getElementById("notes-preview");
 }
