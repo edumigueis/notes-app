@@ -33,10 +33,11 @@ function addEventsToPreviews() {
 }
 addEventsToPreviews();
 function openNote(ev) {
-  alert();
   removeAllActive();
   ev.target.classList.add("active");
   currentNote = notes[ev.target.dataset.note];
+  document.getElementById("current-wrapper").dataset.note =
+    "" + ev.target.dataset.note;
   document.getElementById("current-title").innerHTML = currentNote.title;
   document.getElementById("current-note").innerHTML = currentNote.text;
   if (currentNote.images.length > 0) {
@@ -136,3 +137,16 @@ function updateNotePreviewers() {
   }
   addEventsToPreviews();
 }
+
+document
+  .getElementById("current-title")
+  .addEventListener("click", function (ev) {
+    ev.target.contentEditable = true;
+  });
+document
+  .getElementById("current-title")
+  .addEventListener("focusout", function (ev) {
+    notes[ev.target.parentElement.dataset.note].title = document.getElementById(
+      "current-title"
+    ).innerHTML;
+  });

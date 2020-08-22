@@ -30,6 +30,7 @@ Not supports in Firefox and IE */
 ::-webkit-scrollbar-button {display:none}
 * {
     box-sizing: border-box;
+    outline: none;
 }
 
 .wrapper {
