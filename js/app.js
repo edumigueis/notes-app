@@ -2,8 +2,8 @@ let notes = [
   {
     title: "Carol's Party",
     text:
-      "Bring her a gift and buy soda. yhyi891gt5a0 I'm thinking of buying a really big gift because i wanna show all my love for her. Maybe a biiggg teddy bear would be perfect: yhyi891gt5a1",
-    images: ["./images/1.jpg", "./images/3.jpg"],
+      'Bring her a gift and buy soda. <div class="img-wp"><img src="./images/1.jpg" alt="" /></div> I\'m thinking of buying a really big gift because i wanna show all my love for her. Maybe a biiggg teddy bear would be perfect: <div class="img-wp"><img src="./images/3.jpg" alt="" /></div>',
+    images: ["./images/1.jpg"],
   },
   {
     title: "Shopping List",
@@ -12,7 +12,8 @@ let notes = [
   },
   {
     title: "Tomorrow's Brunch",
-    text: "Call Diego and tell him about the brunch.",
+    text:
+      'Call Diego and tell him about the brunch. <div class="img-wp"><img src="./images/2.jpg" alt="" /></div>',
     images: ["./images/2.jpg"],
   },
   {
@@ -43,13 +44,10 @@ function openNote(ev) {
     "" + ev.target.dataset.note;
   document.getElementById("current-title").innerHTML = currentNote.title;
   document.getElementById("current-note").innerHTML = currentNote.text;
-  if (currentNote.images.length > 0) {
+  /*if (currentNote.images.length > 0) {
     let res = "";
     let currentString;
     let minusCurrentString;
-
-    /*The weird section of characters is a indexed mark to show that there is a photo there. 
-    This sequence is used because it isn't something a user would normally type. */
 
     for (var i = 0; i < currentNote.images.length; i++) {
       currentString = "yhyi891gt5a" + i;
@@ -76,7 +74,7 @@ function openNote(ev) {
     }
 
     document.getElementById("current-note").innerHTML = res;
-  }
+  }*/
 }
 
 document
@@ -118,19 +116,24 @@ function updateNotePreviewers() {
   allNotes = document.getElementsByClassName("note");
   for (var i = 0; i < notes.length; i++) {
     if (notes[i].images[0] == undefined) {
+      alert("u");
       content =
         '<div class="text"><h2>' +
         notes[i].title +
         "</h2><p>" +
-        notes[i].text.substring(0, 200).replace(/<img[^>]*>/g, "") +
-        '</p></div><div class="aux" data-note="4"><div class="img"></div></div>';
+        stripHtml(notes[i].text.substring(0, 200)) +
+        '</p></div><div class="aux" data-note="' +
+        i +
+        '"><div class="img"></div></div>';
     } else {
       content =
         '<div class="text"><h2>' +
         notes[i].title +
         "</h2><p>" +
-        notes[i].text.substring(0, 200).replace(/<img[^>]*>/g, "") +
-        '</p></div><div class="aux" data-note="4"><div class="img"><img src="' +
+        stripHtml(notes[i].text.substring(0, 200)) +
+        '</p></div><div class="aux" data-note="' +
+        i +
+        '"><div class="img"><img src="' +
         notes[i].images[0] +
         '" alt="" /></div></div>';
     }
@@ -154,25 +157,40 @@ document
     ).innerHTML;
   });
 
-document.getElementById("add-image").addEventListener("click", function(){
-    var inp = document.createElement("input");
-    inp.type = "file";
-    
-    inp.addEventListener("change", function(event){
-        openFile(event);
-    })
-    inp.click();
+document.getElementById("add-image").addEventListener("click", function () {
+  var inp = document.createElement("input");
+  inp.type = "file";
 
-    
-})
+  inp.addEventListener("change", function (event) {
+    openFile(event);
+  });
+  inp.click();
+});
 
-var openFile = function(file) {
-    var input = file.target;
+var openFile = function (file) {
+  var input = file.target;
 
-    var reader = new FileReader();
-    reader.onload = function(){
-      dataURL = reader.result;
-      document.getElementById("current-note").innerHTML += '<div class="img-wp"><img src="'+dataURL+'" /></div>'
-    };
-    reader.readAsDataURL(input.files[0]);
+  var reader = new FileReader();
+  reader.onload = function () {
+    dataURL = reader.result;
+    document.getElementById("current-note").innerHTML +=
+      '<div class="img-wp"><img src="' + dataURL + '" /></div>';
+    notes[
+      document.getElementById("current-wrapper").dataset.note
+    ].text = document.getElementById("current-note").innerHTML;
+    notes[document.getElementById("current-wrapper").dataset.note].images.push(
+      "" + dataURL
+    );
+    updateNotePreviewers();
   };
+  reader.readAsDataURL(input.files[0]);
+};
+
+function stripHtml(html) {
+  // Create a new div element
+  var temporalDivElement = document.createElement("div");
+  // Set the HTML content with the providen
+  temporalDivElement.innerHTML = html;
+  // Retrieve the text property of the element (cross-browser support)
+  return temporalDivElement.textContent || temporalDivElement.innerText || "";
+}
