@@ -178,10 +178,15 @@ Not supports in Firefox and IE */
   width: 100%;
   margin: 0 !important;
   color: #2c2c2c;
+  outline: none;
 }
 
-#current-note img {
-  max-width: 100%;
+#current-note .img-wp {
+  width: 100%;
   margin: 10px 0;
+}
+
+#current-note .img-wp img {
+  max-width: 100%;
 }
 /*# sourceMappingURL=styles.css.map */

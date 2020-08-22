@@ -151,8 +151,12 @@ Not supports in Firefox and IE */
     width: 100%;
     margin: 0 !important;
     color: #2c2c2c;
-    img{
-        max-width: 100%;
+    outline: none;
+    .img-wp{
+        width: 100%;
         margin: 10px 0;
+        img{
+            max-width: 100%;
+        }
     }
 }
