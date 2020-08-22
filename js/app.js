@@ -116,7 +116,6 @@ function updateNotePreviewers() {
   allNotes = document.getElementsByClassName("note");
   for (var i = 0; i < notes.length; i++) {
     if (notes[i].images[0] == undefined) {
-      alert("u");
       content =
         '<div class="text"><h2>' +
         notes[i].title +
@@ -155,6 +154,7 @@ document
     notes[ev.target.parentElement.dataset.note].title = document.getElementById(
       "current-title"
     ).innerHTML;
+    updateNotePreviewers();
   });
 
 document.getElementById("add-image").addEventListener("click", function () {
