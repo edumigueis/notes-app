@@ -235,3 +235,21 @@ body {
         }
     }
 }
+
+.modal{
+    height: 400px;
+    width: 500px;
+    background: #fff;
+    position: fixed;
+    display: none;
+    left: calc(50% - 250px);
+    top: 100px;
+    border-radius: 12px;
+}
+.backdrop{
+    background: #1f1f1fbb;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
