@@ -268,7 +268,3 @@ function getSelectionParentElement() {
     }
     return parentEl;
 }
-
-document.getElementById("open-config").addEventListener("click", function(){
-    openModal();
-})
