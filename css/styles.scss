@@ -199,5 +199,14 @@ Not supports in Firefox and IE */
         background: #fefefe;
         border: 1.2px solid rgb(224, 224, 224);
         border-radius: 5px;
+        &:hover{
+            background: #e6e6e6;
+        }
+        &.active{
+            background: #e6e6e6;
+        }
+        b, i, s, u, em{
+            pointer-events: none;
+        }
     }
 }

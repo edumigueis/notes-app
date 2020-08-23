@@ -241,4 +241,16 @@ Not supports in Firefox and IE */
   border: 1.2px solid #e0e0e0;
   border-radius: 5px;
 }
+
+.left-controls button:hover {
+  background: #e6e6e6;
+}
+
+.left-controls button.active {
+  background: #e6e6e6;
+}
+
+.left-controls button b, .left-controls button i, .left-controls button s, .left-controls button u, .left-controls button em {
+  pointer-events: none;
+}
 /*# sourceMappingURL=styles.css.map */

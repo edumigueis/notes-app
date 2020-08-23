@@ -197,30 +197,70 @@ function stripHtml(html) {
   return temporalDivElement.textContent || temporalDivElement.innerText || "";
 }
 
-function addTags(tags) {
+function addTags(tags, event) {
   var container_contenteditable = document.getElementById("current-note");
 
   //Retrieve the selected text :
   var sel = window.getSelection();
   var text = container_contenteditable.innerHTML;
-  container_contenteditable.innerHTML = text.replace(
-    sel,
-    "<" + tags + ">" + sel + "</" + tags + ">"
-  );
+  let element = getSelectionParentElement();
+  
+  if(element == null || element == undefined){
+    ev.target.classList.remove("active");
+    return;
+    
+  }
+
+  if (
+    element.nodeName == "B" ||
+    element.nodeName == "I" ||
+    element.nodeName == "EM" ||
+    element.nodeName == "S" ||
+    element.nodeName == "U"
+  ) {
+    element.replaceWith(element.innerHTML);
+    return;
+  } else {
+    container_contenteditable.innerHTML = text.replace(
+      sel,
+      "<" + tags + ">" + sel + "</" + tags + ">"
+    );
+  }
 }
 
-document.getElementById("to-bold").addEventListener("click", function () {
-  addTags("b");
+document.getElementById("to-bold").addEventListener("click", function (ev) {
+  addTags("b", ev);
+  ev.target.classList.toggle("active");
 });
-document.getElementById("to-italic").addEventListener("click", function () {
-  addTags("i");
+document.getElementById("to-italic").addEventListener("click", function (ev) {
+  addTags("i", ev);
+  ev.target.classList.toggle("active");
 });
-document.getElementById("to-underlined").addEventListener("click", function () {
-  addTags("u");
+document.getElementById("to-underlined").addEventListener("click", function (ev) {
+  addTags("u", ev);
+  ev.target.classList.toggle("active");
 });
-document.getElementById("to-s").addEventListener("click", function () {
-  addTags("s");
+document.getElementById("to-s").addEventListener("click", function (ev) {
+  addTags("s", ev);
+  ev.target.classList.toggle("active");
 });
-document.getElementById("to-em").addEventListener("click", function () {
-  addTags("em");
+document.getElementById("to-em").addEventListener("click", function (ev) {
+  addTags("em", ev);
+  ev.target.classList.toggle("active");
 });
+function getSelectionParentElement() {
+  var parentEl = null,
+    sel;
+  if (window.getSelection) {
+    sel = window.getSelection();
+    if (sel.rangeCount) {
+      parentEl = sel.getRangeAt(0).commonAncestorContainer;
+      if (parentEl.nodeType != 1) {
+        parentEl = parentEl.parentNode;
+      }
+    }
+  } else if ((sel = document.selection) && sel.type != "Control") {
+    parentEl = sel.createRange().parentElement();
+  }
+  return parentEl;
+}
