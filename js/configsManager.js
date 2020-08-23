@@ -20,4 +20,18 @@ document
                 document.getElementById("change-ft-size").value + "px";
         }
     });
-/*https://stackoverflow.com/questions/58664235/allow-users-to-choose-font-from-their-computer-and-use-that-font-on-website */
+document.getElementById("dark-mode").addEventListener("change", function(){
+    if (!document.getElementById("dark-mode").checked) {
+        lightMode();
+    } else {
+        darkMode();
+    }
+})
+
+function darkMode(){
+    document.body.classList.add( "dark" );
+}
+
+function lightMode(){
+    document.body.classList.remove( "dark" );
+}
