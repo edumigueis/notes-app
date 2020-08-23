@@ -169,7 +169,6 @@ body {
     margin: 0 !important;
     color: #2c2c2c;
     outline: none;
-
     .img-wp {
         width: 100%;
         margin: 14px 0;
@@ -257,6 +256,9 @@ body {
             justify-content: center;
             height: 50px;
             border-bottom: 1.2px solid rgb(224, 224, 224);
+            .left-inp{
+                margin-left: auto;
+            }
         }
     }
 }
@@ -333,4 +335,12 @@ $toggle-control-size: $toggle-height - ($toggle-gutter * 2);
             transition: left $toggle-control-speed $toggle-control-ease;
         }
     }
+}
+
+#change-ft-size{
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+    background: #e6e6e7;
+    text-indent: 10px;
 }

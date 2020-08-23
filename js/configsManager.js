@@ -1,7 +1,23 @@
-document.getElementById("spell-cf").addEventListener("change", function(){
-    if(!document.getElementById("spell-cf").checked){
+document.getElementById("spell-cf").addEventListener("change", function () {
+    if (!document.getElementById("spell-cf").checked) {
         document.getElementById("current-note").spellcheck = false;
-    } else{
+    } else {
         document.getElementById("current-note").spellcheck = true;
     }
-})
+});
+
+document
+    .getElementById("change-ft-size")
+    .addEventListener("change", function () {
+        if (
+            document.getElementById("change-ft-size").value > 25 ||
+            document.getElementById("change-ft-size").value < 9
+        ) {
+            document.getElementById("change-ft-size").value = 16;
+            return;
+        } else {
+            document.getElementById("current-note").style.fontSize =
+                document.getElementById("change-ft-size").value + "px";
+        }
+    });
+/*https://stackoverflow.com/questions/58664235/allow-users-to-choose-font-from-their-computer-and-use-that-font-on-website */

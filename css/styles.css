@@ -291,6 +291,10 @@ body {
   border-bottom: 1.2px solid #e0e0e0;
 }
 
+.modal .inner-modal .part .left-inp {
+  margin-left: auto;
+}
+
 .backdrop {
   background: #1f1f1fab;
   position: fixed;
@@ -353,5 +357,13 @@ body {
   background: white;
   -webkit-transition: left 0.15s ease-in;
   transition: left 0.15s ease-in;
+}
+
+#change-ft-size {
+  border: none;
+  border-radius: 10px;
+  height: 30px;
+  background: #e6e6e7;
+  text-indent: 10px;
 }
 /*# sourceMappingURL=styles.css.map */
