@@ -5,8 +5,7 @@ body {
   overflow: hidden;
 }
 
-/* Customize website's scrollbar like Mac OS
-Not supports in Firefox and IE */
+/*Scrollbar not supported in Firefox and IE */
 /* total width */
 ::-webkit-scrollbar {
   background-color: #fff;
@@ -165,12 +164,14 @@ Not supports in Firefox and IE */
   margin-right: 18px;
   font-size: 25px;
   cursor: pointer;
+  color: #2c2c2c;
 }
 
 .header i.far {
   margin-right: 18px;
   font-size: 25px;
   cursor: pointer;
+  color: #2c2c2c;
 }
 
 #current-title {
@@ -240,6 +241,7 @@ Not supports in Firefox and IE */
   background: #fefefe;
   border: 1.2px solid #e0e0e0;
   border-radius: 5px;
+  color: #2c2c2c;
 }
 
 .left-controls button:hover {
@@ -250,7 +252,11 @@ Not supports in Firefox and IE */
   background: #e6e6e6;
 }
 
-.left-controls button b, .left-controls button i, .left-controls button s, .left-controls button u, .left-controls button em {
+.left-controls button b,
+.left-controls button i,
+.left-controls button s,
+.left-controls button u,
+.left-controls button em {
   pointer-events: none;
 }
 /*# sourceMappingURL=styles.css.map */
