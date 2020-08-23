@@ -271,11 +271,87 @@ body {
   border-radius: 12px;
 }
 
+.modal .inner-modal {
+  padding: 15px;
+  width: 100%;
+  height: 100%;
+}
+
+.modal .inner-modal .part {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 50px;
+  border-bottom: 1.2px solid #e0e0e0;
+}
+
 .backdrop {
-  background: #1f1f1fbb;
+  background: #1f1f1fab;
   position: fixed;
   width: 100vw;
   height: 100vh;
   display: none;
+}
+
+.toggle-control {
+  display: block;
+  position: relative;
+  padding-left: 55px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin-left: auto;
+  height: 20px;
+}
+
+.toggle-control input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.toggle-control input:checked ~ .control {
+  background-color: dodgerblue;
+}
+
+.toggle-control input:checked ~ .control:after {
+  left: 30px;
+}
+
+.toggle-control .control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 55px;
+  border-radius: 15px;
+  background-color: darkgray;
+  -webkit-transition: background-color 0.15s ease-in;
+  transition: background-color 0.15s ease-in;
+}
+
+.toggle-control .control:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 15px;
+  background: white;
+  -webkit-transition: left 0.15s ease-in;
+  transition: left 0.15s ease-in;
 }
 /*# sourceMappingURL=styles.css.map */
