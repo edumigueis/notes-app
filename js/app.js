@@ -13,7 +13,7 @@ let notes = [
   {
     title: "Tomorrow's Brunch",
     text:
-      'Call Diego and tell him about the brunch. <div class="img-wp"><img src="./images/2.jpg" alt="" /></div>',
+      'Call Diego and tell him about the brunch. Brunch is a combination of breakfast and lunch, and regularly has some form of alcoholic drink (most usually champagne or a cocktail) served with it. It is usually served anytime before 3 o\'clock in the afternoon. <div class="img-wp"><img src="./images/2.jpg" alt="" /></div>',
     images: ["./images/2.jpg"],
   },
   {
@@ -177,7 +177,9 @@ var openFile = function (file) {
       '<div class="img-wp"><img src="' + dataURL + '" /></div>';
     notes[
       document.getElementById("current-wrapper").dataset.note
-    ].text = document.getElementById("current-note").innerHTML;
+    ].text = document
+      .getElementById("current-note")
+      .innerHTML.replace("'", "'");
     notes[document.getElementById("current-wrapper").dataset.note].images.push(
       "" + dataURL
     );
@@ -195,28 +197,30 @@ function stripHtml(html) {
   return temporalDivElement.textContent || temporalDivElement.innerText || "";
 }
 
-function addTags(tags)
-{
-    var container_contenteditable = document.getElementById("current-note");
+function addTags(tags) {
+  var container_contenteditable = document.getElementById("current-note");
 
-    //Retrieve the selected text :
-    var sel = window.getSelection();
-    var text = container_contenteditable.innerHTML;
-  container_contenteditable.innerHTML = text.replace(sel, '<'+tags+'>'+sel+'</'+tags+'>');
+  //Retrieve the selected text :
+  var sel = window.getSelection();
+  var text = container_contenteditable.innerHTML;
+  container_contenteditable.innerHTML = text.replace(
+    sel,
+    "<" + tags + ">" + sel + "</" + tags + ">"
+  );
 }
 
-document.getElementById("to-bold").addEventListener("click", function(){
-    addTags("b");
-})
-document.getElementById("to-italic").addEventListener("click", function(){
-    addTags("i");
-})
-document.getElementById("to-underlined").addEventListener("click", function(){
-    addTags("u");
-})
-document.getElementById("to-s").addEventListener("click", function(){
-    addTags("s");
-})
-document.getElementById("to-em").addEventListener("click", function(){
-    addTags("em");
-})
+document.getElementById("to-bold").addEventListener("click", function () {
+  addTags("b");
+});
+document.getElementById("to-italic").addEventListener("click", function () {
+  addTags("i");
+});
+document.getElementById("to-underlined").addEventListener("click", function () {
+  addTags("u");
+});
+document.getElementById("to-s").addEventListener("click", function () {
+  addTags("s");
+});
+document.getElementById("to-em").addEventListener("click", function () {
+  addTags("em");
+});
