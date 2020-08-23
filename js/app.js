@@ -194,3 +194,29 @@ function stripHtml(html) {
   // Retrieve the text property of the element (cross-browser support)
   return temporalDivElement.textContent || temporalDivElement.innerText || "";
 }
+
+function addTags(tags)
+{
+    var container_contenteditable = document.getElementById("current-note");
+
+    //Retrieve the selected text :
+    var sel = window.getSelection();
+    var text = container_contenteditable.innerHTML;
+  container_contenteditable.innerHTML = text.replace(sel, '<'+tags+'>'+sel+'</'+tags+'>');
+}
+
+document.getElementById("to-bold").addEventListener("click", function(){
+    addTags("b");
+})
+document.getElementById("to-italic").addEventListener("click", function(){
+    addTags("i");
+})
+document.getElementById("to-underlined").addEventListener("click", function(){
+    addTags("u");
+})
+document.getElementById("to-s").addEventListener("click", function(){
+    addTags("s");
+})
+document.getElementById("to-em").addEventListener("click", function(){
+    addTags("em");
+})
