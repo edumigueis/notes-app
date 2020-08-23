@@ -371,3 +371,40 @@ $toggle-control-size: $toggle-height - ($toggle-gutter * 2);
 .dark .backdrop {
     background: #1f1f1fab !important;
 }
+
+.confirm-modal{
+    position: fixed;
+    left: calc(50% - 100px);
+    width: 200px;
+    background: #fefefe;
+    display: none;
+    top: 200px;
+    border-radius: 10px;
+    h3{
+        text-align: center;
+    }
+    .flex-full{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        button{
+            margin-right: 12px;
+            cursor: pointer;
+        outline: none;
+        border: none;
+        background: #1f1f1f;
+        color: #fff;
+        border: 1px solid #1f1f1f;
+        border-radius: 5px;
+        padding: 0.4rem 1rem;
+        font-size: 16px;
+        font-weight: bold;
+        
+        &:nth-child(1){
+            background: transparent !important;
+            color: #2c2c2c;
+        }
+        }
+    }
+}

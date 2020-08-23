@@ -302,24 +302,11 @@ function updateIndexes() {
 }
 document.getElementById("delete-note").addEventListener("click", function () {
   showConfModal();
-  if (
-    notes.length == 1 &&
-    document.getElementById("current-wrapper").dataset.note == 0
-  ) {
-    return;
-  }
-  notes.splice(
-    document.getElementById("current-wrapper").dataset.note,
-    document.getElementById("current-wrapper").dataset.note + 1
-  );
-  updateIndexes(document.getElementById("current-wrapper").dataset.note);
-  updateNotePreviewers();
-  allNotes[document.getElementById("current-wrapper").dataset.note].click();
 });
 
 function showConfModal() {
   var backdrop = document.querySelector(".backdrop");
-  var confModal = document.querySelector(".conf-modal");
+  var confModal = document.querySelector(".confirm-modal");
   backdrop.style.display = "block";
   gsap.fromTo(
     backdrop,
@@ -334,5 +321,32 @@ function showConfModal() {
       ease: Power1.easeOut,
     }
   );
+  confModal.style.display = "block";
+}
 
+document.getElementById("conf-del").addEventListener("click", function(){
+    deleteCurrentNote();
+    closeModal();
+    document.querySelector(".confirm-modal").style.display = "none";
+})
+document.getElementById("close-del").addEventListener("click", function(){
+    closeModal();
+    document.querySelector(".confirm-modal").style.display = "none";
+})
+
+function deleteCurrentNote(){
+    if (
+        notes.length == 1 &&
+        document.getElementById("current-wrapper").dataset.note == 0
+      ) {
+        
+        return;
+      }
+      notes.splice(
+        document.getElementById("current-wrapper").dataset.note,
+        1
+      );
+      updateIndexes(document.getElementById("current-wrapper").dataset.note);
+      updateNotePreviewers();
+      allNotes[document.getElementById("current-wrapper").dataset.note].click();
 }
