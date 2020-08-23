@@ -18,6 +18,7 @@ let duration = 0.5;
 let timeOut = duration * 1100;
 backdrop.addEventListener("click", function(){
     closeModal();
+    document.querySelector(".confirm-modal").style.display = "none";
 })
 function openModal() {
   modal.style.display = "block";

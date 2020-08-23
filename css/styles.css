@@ -395,10 +395,11 @@ body {
 .confirm-modal {
   position: fixed;
   left: calc(50% - 100px);
-  width: 200px;
+  width: 250px;
   background: #fefefe;
   display: none;
   top: 200px;
+  height: 150px;
   border-radius: 10px;
 }
 
@@ -436,5 +437,9 @@ body {
 .confirm-modal .flex-full button:nth-child(1) {
   background: transparent !important;
   color: #2c2c2c;
+}
+
+.confirm-modal .flex-full button:hover {
+  opacity: 0.85;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -278,6 +278,9 @@ document
     notes[ev.target.parentElement.dataset.note].text = document.getElementById(
       "current-note"
     ).innerHTML;
+    console.log(notes[ev.target.parentElement.dataset.note].text = document.getElementById(
+        "current-note"
+      ).innerHTML);
     updateNotePreviewers();
   });
 
