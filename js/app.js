@@ -2,7 +2,7 @@ let notes = [
   {
     title: "Carol's Party",
     text:
-      'Bring her a gift and buy soda. <div class="img-wp"><img src="./images/1.jpg" alt="" /></div> I\'m thinking of buying a really big gift because i wanna show all my love for her. Maybe a biiggg teddy bear would be perfect: <div class="img-wp"><img src="./images/3.jpg" alt="" /></div>',
+      'Bring her a gift and buy soda. A soft drink is a drink that usually contains carbonated water, a sweetener, and a natural or artificial flavoring. The sweetener may be a sugar, high-fructose corn syrup, fruit juice, a sugar substitute (in the case of diet drinks), or some combination of these. Soft drinks may also contain caffeine, colorings, preservatives, and/or other ingredients. <div class="img-wp"><img src="./images/1.jpg" alt="" /></div> I\'m thinking of buying a really big gift because i wanna show all my love for her. Maybe a biiggg teddy bear would be perfect: <div class="img-wp"><img src="./images/3.jpg" alt="" /></div>',
     images: ["./images/1.jpg"],
   },
   {
