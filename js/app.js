@@ -113,7 +113,7 @@ document.getElementById("add-note").addEventListener("click", function () {
 
 function updateNotePreviewers() {
   let el = document.getElementById("notes-preview");
-  elChild = document.createElement("div");
+  let elChild = document.createElement("div");
   elChild.classList.add("note");
   elChild.dataset.note = "" + notes.length - 1;
   el.appendChild(elChild);
@@ -286,7 +286,12 @@ document
 
 function updateIndexes() {
   allNotes = document.getElementsByClassName("note");
-  for (let i = 0; i < notes.length; i++) {
+  console.log(allNotes);
+  let length = notes.length;
+  if(document.getElementById("current-wrapper").dataset.note == notes.length){
+    length = notes.length + 1;
+  }
+  for (var i = 0; i < length; i++) {
     if (
       allNotes[i].dataset.note ==
       document.getElementById("current-wrapper").dataset.note
@@ -338,18 +343,25 @@ document.getElementById("close-del").addEventListener("click", function(){
 })
 
 function deleteCurrentNote(){
-    if (
-        notes.length == 1 &&
-        document.getElementById("current-wrapper").dataset.note == 0
-      ) {
-        
-        return;
-      }
-      notes.splice(
-        document.getElementById("current-wrapper").dataset.note,
-        1
-      );
-      updateIndexes(document.getElementById("current-wrapper").dataset.note);
+  if (
+    notes.length == 1 &&
+    document.getElementById("current-wrapper").dataset.note == 0
+  ) {
+    
+    return;
+  }
+  notes.splice(
+    document.getElementById("current-wrapper").dataset.note,
+    1
+  );
+      updateIndexes();
       updateNotePreviewers();
-      allNotes[document.getElementById("current-wrapper").dataset.note].click();
+
+      if(document.getElementById("current-wrapper").dataset.note != 0){
+        allNotes[document.getElementById("current-wrapper").dataset.note - 1].click();
+      }
+      else{
+        allNotes[document.getElementById("current-wrapper").dataset.note].click();
+      }
+      
 }
