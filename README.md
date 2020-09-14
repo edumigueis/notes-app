@@ -1,6 +1,6 @@
 # notes-app
 
-- [Live Demo](https://edumigueis.github.io/meditation-app/)
+- [Live Demo](https://edumigueis.github.io/notes-app/)
 >  An website made for note-taking and simple text editing. All editing is based around html tags and css properties. Made with html, scss and js. 
 
 [![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) [![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square)](https://coveralls.io/r/badges/badgerbadgerbadger) [![License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT)
