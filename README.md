@@ -3,7 +3,7 @@
 - [Live Demo](https://edumigueis.github.io/meditation-app/)
 >  An website made for note-taking and simple text editing. All editing is based around html tags and css properties. Made with html, scss and js. 
 
-[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) [![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square)](https://coveralls.io/r/badges/badgerbadgerbadger) [![License](https://img.shields.io/badge/license-Apache%202-blue)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) [![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square)](https://coveralls.io/r/badges/badgerbadgerbadger) [![License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT)
 
 [![header.png](header.png)]()
 
@@ -22,8 +22,8 @@
 
 ## License
 
-[![License](https://img.shields.io/badge/license-Apache%202-blue)](https://www.apache.org/licenses/LICENSE-2.0)
+[![License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT)
 
-- **[Apache-2.0 LICENSE](https://www.apache.org/licenses/LICENSE-2.0)**
+- **[MIT LICENSE](https://opensource.org/licenses/MIT)** - See ``LICENSE`` for more information.
 - Copyright 2020 © Eduardo Migueis.
 
