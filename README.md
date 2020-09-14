@@ -7,17 +7,18 @@
 
 [![header.png](header.png)]()
 
-- This app can show a breath animation, relaxing videos and music.
-- Made with javascript, html and css.
+- This app allows user to add note, edit note and delete note.
+- Notes can contain images and can have text variation.
+- Made with javascript, html and scss.
 ---
 
 ## Installation
 
-- To run this project you need to download it and open the html file in a browser.
+- To run this project you need to download it and open the html file in a browser. The index.html file points to an already compiled css, that results of the scss file. So, there is no need to use a pre-processor. If you want to edit something, you can change the css file directly, or, if you want to use scss, use a live sass compiler or a pre-processor.
 
 ### Clone
 
-- Clone this repo to your local machine using `https://github.com/edumigueis/meditation-app.git`
+- Clone this repo to your local machine using `https://github.com/edumigueis/notes-app.git`
 ---
 
 ## License
