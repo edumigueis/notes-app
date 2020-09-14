@@ -1,3 +1,10 @@
+/*!
+ * configsManager.js (https://github.com/edumigueis/notes-app)
+ * Version: 1.0
+ * Author: Eduardo Migueis @edumigueis
+ * Github: https://github.com/edumigueis/notes-app
+ * configsManager.js Copyright Eduardo Migueis 2020.
+ */
 document.getElementById("spell-cf").addEventListener("change", function () {
   if (!document.getElementById("spell-cf").checked) {
     document.getElementById("current-note").spellcheck = false;

@@ -1,3 +1,10 @@
+/*!
+ * app.js (https://github.com/edumigueis/notes-app)
+ * Version: 1.0
+ * Author: Eduardo Migueis @edumigueis
+ * Github: https://github.com/edumigueis/notes-app
+ * app.js Copyright Eduardo Migueis 2020.
+ */
 let notes = [
   {
     title: "Carol's Party",
